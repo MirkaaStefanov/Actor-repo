@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header th:insert="header.html"></header>
+
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col">
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Genre</th>
+                    <th scope="col">Release year</th>
+                    <th scope="col">Actors</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <tr th:each="film : ${allLeapFilms}">
+                    <th scope="row" th:text="${film.id}"/>
+                    <td th:text="${film.title}"/>
+                    <td th:text="${film.genre}"/>
+                    <td th:text="${film.releaseYear}"/>
+
+                    <td>
+                        <li th:each="actor : ${film.actors}" th:text="${actor.name}" />
+                    </td>
+                </tr>
+
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
